@@ -36,7 +36,7 @@
 <a id="fourth-entry" class="anchor" href="#fourth-entry" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2016-12-02 Scripts</h3>
 
 <p> Done some quick scripting on Uppmax. We have around 15-22 million reads in each file (with each read being 76bp, have to confirm this is the case for all samples).
-  <ul>
+  <ul id="sample_list">
     <li>H3.3 Wildtype   21,079,172 reads</li>
     <li>H3.3 KO         16,330,970 reads</li>
     <br>
@@ -44,6 +44,10 @@
     <li>ATRX KO         24,615,902 reads</li>
     <li>DAXX KO         11,603,719 reads</li>
   </ul>
+          #sample_list
+{
+ text-indent:10px;
+}
   <br>
   We had a good meeting with Simon and have updated our research question. <br>
           <i> How many significant Double Stranded Breaks (peaks) is there in the KO samples compared to its respective wildtype (adjust for "freak peaks" by comparing the samples 
