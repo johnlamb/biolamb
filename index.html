@@ -32,12 +32,27 @@
         <hr>
 
         <section id="main_content">
+          <h3><a id="six-entry" class="anchor" href="#six-entry" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2016-12-05 Project plan and QC</h3>
+          Good check up meeting. Clear path on what we all have to do for this week.<br><br>
+          I trimmed the fastq files for the beginning MI and barcode, 16 bases, and ran fastqc again. Instantly looks better. However we seem to have som 3' Illumina
+          adapter contamination. Leonard and I went through and check and found the exact sequence. We will do some research on <i>cutadapt</i> to 
+          remove them.<br><br>
+          I am rerunning the mapping against the trimmed files, most likely using <b>bew aln</b> instead of <b>bwa mem</b> as the sequences
+          now are down to 60 bp. Will be interesting to see what happens with RNA primer purging.<br><br>
+          Looking into peak calling, in the middle of a small script to make sure all the files are in proper format (bed) for MACS (and looking at
+          least one more tool). Jing will ask Simon for the bed-files that indentifies the G4Q sites so we can correlate.<br><br>
+          The updated project goal: <i>Are there a significant increase in DBS between the wildtype and knockout samples? Are these breaks correlated to the known G4Q sites?</i>
+          <br><br>
+          We need to get Lars input on the statistics on Wednesday, what would be the best approach to calculate the confidance given so few samples?
+          </p>
+        
+        
           <h3><a id="fifth-entry" class="anchor" href="#fifth-entry" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2016-12-04 Alignments</h3>
           Sorted the mm10 mouse reference. The full one came in 2bit format so have done some conversion (straight forward) into .fa format.
           Built script and run the index (bwa) on the reference, reside in the data folder. Have also got a script up and running for alignment with bwa-mem (default parameters).
           Simple support for running all 5 samples in parallel. 
           <br><br>
-          Went through the fastaqc result and there are some question marks. Specifically 3'-adapters in the latter part of the reads and som
+          Went through the fastqc result and there are some question marks. Specifically 3'-adapters in the latter part of the reads and som
           strange nucleotide spreading in the first 3rd. We also have to look for the Molecular Identifier and Barcode patterns. Remember they are both
           8 base pairs long and the Barcode always ends with a C. Should be easy to run some quick statistics to verify the 4 diff positions (pos 8, 16 and -8 and -16). 
           <br><br>
