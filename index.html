@@ -32,7 +32,20 @@
         <hr>
 
         <section id="main_content">
-           <h3>
+          <h3><a id="fifth-entry" class="anchor" href="#fifth-entry" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2016-12-04 Alignments</h3>
+          Sorted the mm10 mouse reference. The full one came in 2bit format so have done some conversion (straight forward) into .fa format.
+          Built script and run the index (bwa) on the reference, reside in the data folder. Have also got a script up and running for alignment with bwa-mem(default parameters).
+          Simple support for running all 5 samples in parallel. 
+          <br>
+          Went through the fastaqc result and there are some question marks. Specifically 3'-adapters in the latter part of the reads and som
+          strange nucleotide spreading in the first 3rd. We also have to look for the Molecular Identifier and Barcode patterns. Remember they are both
+          8 base pairs long and the Barcode always ends with a C. Should be easy to run some quick statistics to verify the 4 diff positions (pos 8, 16 and -8 and -16). 
+          <br>
+          Meeting tomorrow at 1300. We need to have all quality questions sorted this week and preferably a full pipeline for the analysis done so we quickly can run everything through.
+          
+          </p>
+        
+        <h3>
 <a id="fourth-entry" class="anchor" href="#fourth-entry" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2016-12-02 Scripts</h3>
 
 <p> Done some quick scripting on Uppmax. We have around 15-22 million reads in each file (with each read being 76bp, have to confirm this is the case for all samples).
