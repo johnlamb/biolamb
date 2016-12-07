@@ -1,0 +1,23 @@
+scripts scripts/countReads.sh data/JL*		# This counts the reads in each fastq file
+sbatch mm10.index.sh				# Create an index for the mouse mm10 reference genome
+sbatch samIndex.sh				# Creates a sam-index for the genome. For us with the sam files
+sbatch mm10.mem.aln.sh          		# Using bwa mem, aligns all 5 samples with the mm10 reference genome (after the reference has been indexed)
+sbatch mm10.aln.sh          			# Using bwa aln, aligns all 5 samples with the mm10 reference genome (after the reference has been indexed)
+sbatch mm10.peak.sh				# Runs MACS2 on the .sam files
+sbatch convertSaiToSam.sh			# (Not needed with bwa-mem) Convert the *.sai outfiles from the alignment to human readable .sam files.
+scripts/trimMIandBarcode.sh data/JL*.fastq	# Trim the adapters, 8 plus 8 bases from the start. OBS the file input.
+scripts/fastqc.sh data/JL*trimmed.fastq		# Run fastqc on the listed files (in this case the trimmed files)
+sbatch samToBamToBed.sh				# Runs the full pipeline from sam file to ready bed file including indexing and sorting individual files
+
+
+
+
+##### PIPELINE #####
+With an indexed reference genome (both mm10.index.sh and samIndex.sh) and cleaned
+fastq files (trimImandBarcode.sh and having checked the quality with FastQC) the pipeline is as follows:
+
+1.	Run alignment, if bwa mem, jump to 3.
+2.	Convert .sai to .sam using convertSaiToSam.sh, check the scripts for right files
+3.	Convert .sam to .bam, sort and index each file and convert to .bed. All using samToBamToBed.sh
+4. 	These .bed files are now ready for MACS or viewing.
+5. 	mm10.peak.se will run MACS2 peak calling on .sam files. Outputs in a separate directory under output
