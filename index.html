@@ -32,6 +32,20 @@
         <hr>
 
         <section id="main_content">
+          <h3><a id="ten-entry" class="anchor" href="#ten-entry" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2016-12-09 Progress and pipeline</h3>
+        <p>We had a productive meeting yesterday were we went through the first peak data. On initial analysis we have an increase in DSB in both the H33 KO and ATRX KO. The ATRX KO given a 5 fold increase
+          while H33 KO a mere 50%. The DAXX showed a decline which raises alarm but might be a artifact of not running repeat experiments.<br>
+          We are now evaluating the pipeline. We have run bwa-aln as the most widely used aligner but also tried bwa-mem. However with these short reads (60bp) we will most
+          likely not see a difference. Weilong is doing a quality analysis for this. We have also tried running bowtie2 as the defact speed standard of the modern aligners. Remains to be seen if 
+          it even matters for our project as the aligning in itself has less impact as long as it is over a certain threshold.<br>
+          Thus far we have only run MACS2 as a peak caller. We do have an interest in trying Homer findPeaks and maybe SISSR as more moderna tools but time will
+          tell if we will have to push it for a further project or include in this.<br>
+          A good way to improve the tool chain at this stage is to fully automate the running, so we can give one (or more) fastq files and a reference and this will
+          result in the peaks (which we are happy with as final result for the tool chain). The chain is almost fully automated now but I am
+          in the process of finalizing it and also  make sure it is fully modular so you would easily be able to decide yourself what aligner and peak caller to use.
+          
+          
+          </p>
           <h3><a id="ninth-entry" class="anchor" href="#ninth-entry" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2016-12-07 Jobs for tomorrow</h3>
          Good seminar which helped to see where we stand and what stands before us. Got some interesting info on the Molecular Identifier and Barcode in the BLISS
           protocol that these are usually used in the peak calling protocols as well. What we understood from Simon they are not needed for us as splitting of the samples
