@@ -32,6 +32,29 @@
         <hr>
 
         <section id="main_content">
+          <h3><a id="eleven-entry" class="anchor" href="#eleven-entry" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2016-12-12 Control peaks, full automation and improvements</h3>
+        <p>The pipeline is improved as being fully automatic. Fastq file to peaks results file are now automated. A logical next step on this
+          is to modularize the pipeline as well(right now the pipeline(s) are fixed tools). <br>
+          Have run more experiments with Simons supplied GQP.bed file which shows the locations of the G4Q complexes. Have done them with all 4 variants
+          of the pipeline and handed it over to the others. We will hopefully have some concrete biological answers early this week so we can
+          discuss with Lars at this weeks seminar were we stand on material.<br><br>
+          I have looked closer at our toolchain and the best option of the once we have tried seems to be Bowtie2 in combination with MACS2. No suprise there with
+          Bowtie2 being a leader in short sequencing alignments and MACS2 being one of the popular peak callers. Important to not compare Macs (1.1) and MACS2
+          as they calculate p-values and q-values differently. MACS(1.1) mainly uses p-value as cutoff and hence no family wise error correction
+          while the newer MACS2 predominantly pusches for the family wise correction of q-value, especially as it also reports FDR.
+         <br>
+          Some improvments that could be done with more time (on top of the improvements already implemented in the pipeline):
+          <br><b>Biological</b>
+          <ul>
+            <li>Repeat the sequencing with multiple samples. Each sample has only been sequenced once, should be at least 3, pref 5 for statistical rigour.</li>
+            <li>Do a separate analysis on the G4Q locations on the same wildtypes as in the samples, H33 and WT26.</li>
+          <ul>
+            <b>Technical</b>
+            <ul>
+              <li>Do a grid search or the like for different parameters for the different tools. (Also evaluate more tools)</li>
+              <li>Fully modularize the automation, which in effect means build a new program specifically for comparing peak locations with a reference</li>
+            </ul>
+          </p>
           <h3><a id="ten-entry" class="anchor" href="#ten-entry" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2016-12-09 Progress and pipeline</h3>
         <p>We had a productive meeting yesterday were we went through the first peak data. On initial analysis we have an increase in DSB in both the H33 KO and ATRX KO. The ATRX KO given a 5 fold increase
           while H33 KO a mere 50%. The DAXX showed a decline which raises alarm but might be a artifact of not running repeat experiments.<br>
