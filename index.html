@@ -41,20 +41,20 @@
           Bowtie2 being a leader in short sequencing alignments and MACS2 being one of the popular peak callers. Important to not compare Macs (1.1) and MACS2
           as they calculate p-values and q-values differently. MACS(1.1) mainly uses p-value as cutoff and hence no family wise error correction
           while the newer MACS2 predominantly pusches for the family wise correction of q-value, especially as it also reports FDR.
-         <br>
-          Some improvments that could be done with more time (on top of the improvements already implemented in the pipeline):
           <br>
-          <b>Biological</b>
+          Some improvments that could be done with more time (on top of the improvements already implemented in the pipeline)    
+          </p>
+           <b>Biological</b>
           <ul>
             <li>Repeat the sequencing with multiple samples. Each sample has only been sequenced once, should be at least 3, pref 5 for statistical rigour.</li>
             <li>Do a separate analysis on the G4Q locations on the same wildtypes as in the samples, H33 and WT26.</li>
           </ul>
+          
             <b>Technical</b>
             <ul>
               <li>Do a grid search or the like for different parameters for the different tools. (Also evaluate more tools)</li>
               <li>Fully modularize the automation, which in effect means build a new program specifically for comparing peak locations with a reference</li>
             </ul>
-          </p>
           <h3><a id="ten-entry" class="anchor" href="#ten-entry" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2016-12-09 Progress and pipeline</h3>
         <p>We had a productive meeting yesterday were we went through the first peak data. On initial analysis we have an increase in DSB in both the H33 KO and ATRX KO. The ATRX KO given a 5 fold increase
           while H33 KO a mere 50%. The DAXX showed a decline which raises alarm but might be a artifact of not running repeat experiments.<br>
@@ -70,7 +70,7 @@
           
           </p>
           <h3><a id="ninth-entry" class="anchor" href="#ninth-entry" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2016-12-07 Jobs for tomorrow</h3>
-         Good seminar which helped to see where we stand and what stands before us. Got some interesting info on the Molecular Identifier and Barcode in the BLISS
+         <p>Good seminar which helped to see where we stand and what stands before us. Got some interesting info on the Molecular Identifier and Barcode in the BLISS
           protocol that these are usually used in the peak calling protocols as well. What we understood from Simon they are not needed for us as splitting of the samples
           and normalization has already been done. We are however checking this with Simon.<br><br>
           I have run MACS2 peak calling for the trimmed dataset and Weilong will be doing summary and descriptive statistics of the result before the meeting tomorrow.
@@ -88,14 +88,16 @@
           behind each extra peak.<br>
           <b>Update!</b> Leonard found something really interesting about the RNA primer contaminations and the "extra" sequences that
           was added after the primer to fill out the gap. Seems there has been a problem before and why they map to the carp genom:<br>
-          <a href="http://grahametherington.blogspot.se/2014/09/why-you-should-qc-your-reads-and-your.html ">http://grahametherington.blogspot.se/2014/09/why-you-should-qc-your-reads-and-your.html</a>
           
           
-          
+        <a href="http://grahametherington.blogspot.se/2014/09/why-you-should-qc-your-reads-and-your.html ">http://grahametherington.blogspot.se/2014/09/why-you-should-qc-your-reads-and-your.html</a>
           </p>
+          
+          
+          
         
         <h3><a id="eight-entry" class="anchor" href="#eight-entry" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2016-12-07 Peaks and delegation</h3>
-         Built a small pipeline for the peak calling using MACS2. Running it as we speak(read). <br>
+         <p>Built a small pipeline for the peak calling using MACS2. Running it as we speak(read). <br>
           We also got the G4Q-complex locations BED files from Simon so can use those to see if there is any correlation between the
           peaks and G4Q-location. Will be interesting to see if there are any correlations.<br><br>
           We need to have a serious talk in the group today about the work that is done and delegation. We need to have all data ready 
@@ -104,21 +106,22 @@
           </p>
           
           <h3><a id="seven-entry" class="anchor" href="#seven-entry" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2016-12-06 Pipeline</h3>
-         A full pipeline is set up and documented (commands.txt in the project root folder on Uppmax). This will take the (trimmed and quality checked) files
+         <p>A full pipeline is set up and documented (commands.txt in the project root folder on Uppmax). This will take the (trimmed and quality checked) files
           and map (to .sai with bwa aln or .sam with bwa mem) and then convert/index/sort etc into .bed files ready for MACS and/or viewing.<br><br>
           Seminar tomorrow, questions we need to discuss/talk to Lars about:
+          </p>
           <ul>
             <li>Preprocessing steps, have we missed something? RNA 3' adapters cleaning?</li>
             <li>Statistics, any idea of tests to explore?</li>
             <li>Tools pipeline, bwa aln/mem, samtools and MACS.</li>
             <li>Scope of project</li>
           </ul>
-          </p>
+          
         
         
         
         <h3><a id="six-entry" class="anchor" href="#six-entry" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2016-12-05 Project plan and QC</h3>
-          Good check up meeting. Clear path on what we all have to do for this week.<br><br>
+          <p>Good check up meeting. Clear path on what we all have to do for this week.<br><br>
           I trimmed the fastq files for the beginning MI and barcode, 16 bases, and ran fastqc again. Instantly looks better. However we seem to have som 3' Illumina
           adapter contamination. Leonard and I went through and checked and found the exact sequence. We will do some research on <i>cutadapt</i> to 
           remove them.<br><br>
@@ -133,7 +136,7 @@
         
         
           <h3><a id="fifth-entry" class="anchor" href="#fifth-entry" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2016-12-04 Alignments</h3>
-          Sorted the mm10 mouse reference. The full one came in 2bit format so have done some conversion (straight forward) into .fa format.
+          <p>Sorted the mm10 mouse reference. The full one came in 2bit format so have done some conversion (straight forward) into .fa format.
           Built script and run the index (bwa) on the reference, reside in the data folder. Have also got a script up and running for alignment with bwa-mem (default parameters).
           Simple support for running all 5 samples in parallel. 
           <br><br>
@@ -149,7 +152,7 @@
 <a id="fourth-entry" class="anchor" href="#fourth-entry" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2016-12-02 Scripts</h3>
 
 <p> Done some quick scripting on Uppmax. We have around 15-22 million reads in each file (with each read being 76bp, have to confirm this is the case for all samples).
-  <ul id="sample_list">
+          </p><ul id="sample_list">
     <li>H3.3 Wildtype   21,079,172 reads</li>
     <li>H3.3 KO         16,330,970 reads</li>
     <br>
@@ -157,18 +160,16 @@
     <li>ATRX KO         24,615,902 reads</li>
     <li>DAXX KO         11,603,719 reads</li>
   </ul>
-
+<p>
   We had a good meeting with Simon and have updated our research question. <br>
           <i> How many significant Double Stranded Breaks (peaks) is there in the KO samples compared to its respective wildtype (adjust for "freak peaks" by comparing the samples 
           against a paired-end sequencing of genomic DNA from wildtype ES cells at <a href="https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM1555118">https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM1555118</a>)
           and do these peaks (DSB) correspond to known location of the G4Q-complex? G4Q-complex in coding regions or non-coding regions?</i>
-<br>Upcoming group meetings:
+  <br>Upcoming group meetings:</p>
     <ul>
       <li>Monday 5th Dec, 13:00, Pluto Alpha 4</li>
       <li>Thursday 8th Dec, 10:00, Kinnekulle Alpha 5</li>
           </ul>
-       
-          </p>
  
 <hr>
           <h3>
