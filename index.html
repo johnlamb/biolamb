@@ -33,6 +33,21 @@
         <hr>
 
         <section id="main_content">
+           <h3><a id="twelve-entry" class="anchor" href="#twelve-entry" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2016-12-14 MACS2 with controls</h3>
+        <p> Have gone through Simons five bed files and created scripts for them all. Half are done at this moment and the rest are in the queue. 
+          We need to analys this data and I believe that this gives us enough data for this project. <br>
+          Will be interesting to see if we have any correlation between the G4Q sites and our peaks.          
+          </p><br>
+          <b>BED-files</b>
+          <ul>
+            <li>GQP:          Sites predicted by GGG(NNN)4 motif repeats</li>
+            <li>Shuffled:     Same number of intervals as above but random location</li>
+            <li>RNAPe:        Intersect of GQP and genes enrichedin elongated RNA Pol II, subset of G4Q in actively transcribed regions </li>
+            <li>Genic:        Intersect of GQP and genes, subset of G4Q in both active and passive transciptions</li>
+            <li>RefGene_TSS:  Intersect of GQP and transcription ofstart sites/promoter genes, ie subset of G4Q within 1kb of start of genes</li>
+          </ul>
+          
+          
           <h3><a id="eleven-entry" class="anchor" href="#eleven-entry" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2016-12-12 Control peaks, full automation and improvements</h3>
         <p>The pipeline is improved as being fully automatic. Fastq file to peaks results file are now automated. A logical next step on this
           is to modularize the pipeline as well(right now the pipeline(s) are fixed tools). <br>
