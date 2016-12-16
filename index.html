@@ -33,6 +33,25 @@
         <hr>
 
         <section id="main_content">
+           <h3><a id="thirteen-entry" class="anchor" href="#thirteen-entry" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2016-12-16 Rerunning final pipeline</h3>
+        <p> After our meeting yesterday and the seminar we have decided on the final pipeline. It is running as we speak(type) and should all be done by monday.
+         </p>
+          <ol>
+            <li>Trim our reads from the first 16 bases; Molecular Identifier and barcode(Quality already checked)</li>
+            <li>Create index using the mm9 mouse reference</li>
+            <li>Align reads with bowtie2</li>
+            <li>Using a standard mate paired read, https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSM1555118, align with bowtie2 in the same way as our samples to create a control</li>
+            <li>Filter the resulting sam-files with Simons supplied bed-files for specific locations</li>
+            <li>Run peak calling on all 5 filtered versions of each sample, using the control sample from above as control to control for artificial peaks</li>
+            <li>Using the resulting data to draw conclusions</li>
+          </ol>
+          <p>
+            Leonard has ownership of the poster. We will most likely do some work over christmas and then put in a week in January to fully finalise everything.
+          </p>
+          
+          
+          
+          
            <h3><a id="twelve-entry" class="anchor" href="#twelve-entry" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2016-12-14 MACS2 with controls</h3>
         <p> Have gone through Simons five bed files and created scripts for them all. Half are done at this moment and the rest are in the queue. 
           We need to analys this data and I believe that this gives us enough data for this project. <br>
