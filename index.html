@@ -33,7 +33,21 @@
         <hr>
 
         <section id="main_content">
-           <h3><a id="thirteen-entry" class="anchor" href="#thirteen-entry" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2016-12-16 Rerunning final pipeline</h3>
+           <h3><a id="fourteen-entry" class="anchor" href="#fourteen-entry" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2016-12-19 Extra data</h3>
+     <p> Did some rerunning of the files to evaluate the tools. We know have 4 sets of the data set, depending on when and how we do the filtering:</p>
+          <ul>
+            <li>Default, first peak calling, then intersect with no options(intersect only gives overlap on both A and B)</li>
+            <li>First peak calling, then intersect with option -wa (the full part from A as long as any part from B overlap)</li>
+            <li>Filter before peak calling, intersect with no options</li>
+            <li>Filter before peak calling with the -wa flag on intersect</li>
+          </ul>
+          <p>On a quick initial analysis there are some differences which may point to problems with the tool chain. Theoretically, filtering before or after the
+            peak calling should not matter but rather produce the exact same result. <br>
+            The potential difference between using the -wa flag or not is more of a biological problems and my initial guess that it reflects the actual experiment.
+          </p>
+          
+          
+          <h3><a id="thirteen-entry" class="anchor" href="#thirteen-entry" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2016-12-16 Rerunning final pipeline</h3>
         <p> After our meeting yesterday and the seminar we have decided on the final pipeline. It is running as we speak(type) and should all be done by monday.
          </p>
           <ol>
