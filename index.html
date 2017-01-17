@@ -32,7 +32,46 @@
 
         <hr>
 
-        <section id="main_content">
+        <section id="main_content"><h3><a id="dixteen-entry" class="anchor" href="#sixteen-entry" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2017-01-17 Project summary</h3>
+     <p> A summary and some thoughts after yesterdays poster session.<br>
+       It has been a very interesting project which has resulted in some very interesting information, which has raised further questions.
+       There is potential for multiple directions to take this information further but the main once are:
+       </p>
+          <ul>
+            <li>Rerun the BLISS experiment with once cell line for all three knockout</li>
+            <li>Rerun the BLISS experiment with multiplexing to secure statistical significance</li>
+            <li>Analyze the distribution of the DSB/peaks within the filter positions, in the TSS filter, are the breaks distributed evenly in all start sites or are there a few genes that result in all the breaks?</li>
+          </ul>
+          <h4>Interpretation of result</h4>
+          <p>
+         The result indicates that the G4Q-complex does have a strong correlation with the unravelling of the G4-complex and prevention of Double Stranded Breaks.
+            All three knockouts shows an increase of DSB in at least one of the sites analyzed when the data has been normalized. Hence, by destabilising the G4Q-complex
+            less breaks are repaired which results in more breaks.
+            <br>
+            A major limitation in this project has been the available data. Two cell lines are used but with only one and two respective knockout gene with no redundance. 
+            The data was not multilpexed and hence we only have one sample from each which makes it hard to show statistical significance or potential errors in the conclussions.
+            <br>
+            Our suggestion to improve this is to run new experiments using a single cell line and also to multiplex these result, preferably 5 or more times to be able to create strong
+            supportive statistics.
+          </p>
+          <h4>Reflection over methods and tools</h4>
+          <p>
+            Having done quality checks on the BLISS-data and confirmed the high quality (and trimmed identifiers and labels) we investigated different tools.
+            Due to the time constraint we went with some of the big name tools, Bowtie2, bwa aln and bwa mem for alignment and MACS2 for peak-calling. There was not much difference in quality of the
+            aligners but bowtie2 performed fastest and produced the most compatible files. See blog posts further down for the breakdown of the pipeline and the improvements we
+            made. Especially in automation to be able to quickly replicate/rerun experiments from raw file all the way to final file.
+          <br> The limitations on the method and tools side in this project lies primarily with the quality of the data. All other steps can be fully automated
+            but QA always needs a human eye to interpret. We have implemeted a small QA check in the pipeline to make sure some quality metrics does not fall outside reasonable bounds but this is
+            usually not enough to secure quality.
+            <br>
+            Another approach to this project would be to evaluate a full pipeline for peak calling but this would need very different data and the primary focus for this 
+            project should be the biological question and hence full focus on a robust and replicable pipeline, which we have implemented.
+            
+          </p>
+          
+          
+          
+          
            <h3><a id="fifteen-entry" class="anchor" href="#fifteen-entry" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>2017-01-11 Red thread</h3>
      <p> Meeting with the group to discuss the red thread of the poster. Productive and we have found a lot of insight with the little
           data we have, interesting!<br>
